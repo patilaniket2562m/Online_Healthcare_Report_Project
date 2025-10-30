@@ -4,74 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Health Record - Register</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: #cceeff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    .form-box {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 450px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #3399ff;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #267fd9;
-    }
-
-    a {
-      color: #3399ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .error {
-      color: #ff3333;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .success {
-      color: #00cc00;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styleRegister.css" />
 </head>
 <body>
   <form class="form-box" id="registerForm">
@@ -87,43 +20,6 @@
     <p>Already have an account? <a href="index.html">Login</a></p>
   </form>
 
-  <script>
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const fullName = document.getElementById('fullName').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-      const messageDiv = document.getElementById('registerMessage');
-      
-      if (password !== confirmPassword) {
-        messageDiv.innerHTML = '<p class="error">Passwords do not match!</p>';
-        return;
-      }
-      
-      if (password.length < 6) {
-        messageDiv.innerHTML = '<p class="error">Password must be at least 6 characters!</p>';
-        return;
-      }
-      
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      
-      if (users.some(u => u.email === email || u.username === username)) {
-        messageDiv.innerHTML = '<p class="error">User already exists!</p>';
-        return;
-      }
-      
-      users.push({ fullName, email, phone, username, password });
-      localStorage.setItem('users', JSON.stringify(users));
-      
-      messageDiv.innerHTML = '<p class="success">Registration successful! Redirecting...</p>';
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 1500);
-    });
-  </script>
+  <script src="scriptRegister.js"></script>
 </body>
 </html>

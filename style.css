@@ -1,0 +1,216 @@
+ * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #cceeff;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #3399ff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav h2 {
+      margin: 0;
+      color: white;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+    nav ul li a:hover {
+      opacity: 0.8;
+    }
+
+    .content {
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .content h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #004d99;
+    }
+    .content p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+    }
+    .card h3 {
+      color: #3399ff;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .card p {
+      color: #555;
+      flex-grow: 1;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card button {
+      background-color: #3399ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    .card button:hover {
+      background-color: #267fd9;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    .upload-area {
+      border: 2px dashed #3399ff;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 15px 0;
+    }
+
+    .upload-area:hover {
+      background-color: #e6f7ff;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-info {
+      margin-top: 15px;
+      color: #555;
+      min-height: 20px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #3399ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .submit-btn:hover {
+      background-color: #267fd9;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+      .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+      }
+    }
+
+
+    

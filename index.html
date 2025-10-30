@@ -4,77 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Health Record - Login</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: #cceeff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    .form-box {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #3399ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #267fd9;
-    }
-
-    .form-box a {
-      color: #3399ff;
-      text-decoration: none;
-    }
-
-    .form-box a:hover {
-      text-decoration: underline;
-    }
-
-    .error {
-      color: #ff3333;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .success {
-      color: #00cc00;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styleIndex.css" />
 </head>
 <body>
   <div class="container">
@@ -89,39 +19,6 @@
     </form>
   </div>
 
-  <script>
-    // Initialize with demo data if first time
-    if (!localStorage.getItem('users')) {
-      localStorage.setItem('users', JSON.stringify([
-        {
-          fullName: 'Demo User',
-          email: 'demo@health.com',
-          phone: '1234567890',
-          username: 'demo',
-          password: 'demo123'
-        }
-      ]));
-    }
-
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const messageDiv = document.getElementById('loginMessage');
-      
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      const user = users.find(u => 
-        (u.email === username || u.username === username) && u.password === password
-      );
-      
-      if (user) {
-        sessionStorage.setItem('currentUser', JSON.stringify(user));
-        window.location.href = 'dashboard.html';
-      } else {
-        messageDiv.innerHTML = '<p class="error">Invalid username or password! Try: demo / demo123</p>';
-      }
-    });
-  </script>
+  <script src="scriptIndex.js"></script>
 </body>
 </html>

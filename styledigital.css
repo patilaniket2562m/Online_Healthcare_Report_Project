@@ -1,0 +1,165 @@
+ * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #cceeff;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #3399ff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav h2 {
+      margin: 0;
+      color: white;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+    nav ul li a:hover {
+      opacity: 0.8;
+    }
+
+    .content {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .content h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #004d99;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      font-size: 16px;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+    }
+    th {
+      background-color: #3399ff;
+      color: white;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover {
+      background-color: #e6f7ff;
+    }
+
+    button {
+      background-color: #3399ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 5px;
+    }
+    button:hover {
+      background-color: #267fd9;
+    }
+
+    .view-btn {
+      background-color: #00cc66;
+    }
+    .view-btn:hover {
+      background-color: #00994d;
+    }
+
+    .delete-btn {
+      background-color: #ff4444;
+    }
+    .delete-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .no-reports {
+      text-align: center;
+      padding: 40px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        margin: 20px 10px;
+      }
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: white;
+        padding: 15px;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        font-size: 14px;
+      }
+      td::before {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #3399ff;
+      }
+      td:nth-of-type(1)::before { content: "Report Name"; }
+      td:nth-of-type(2)::before { content: "Date"; }
+      td:nth-of-type(3)::before { content: "Doctor"; }
+      td:nth-of-type(4)::before { content: "Actions"; }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 2px 0;
+      }
+    }
